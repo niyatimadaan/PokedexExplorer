@@ -1,6 +1,7 @@
 import { initTRPC } from "@trpc/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
+import { get } from "http";
 
 const prisma = new PrismaClient();
 const t = initTRPC.create();
@@ -74,6 +75,9 @@ export const appRouter = t.router({
     return prisma.pokemon.delete({
       where: { name: input },
     });
+  }),
+  getAllPokemon: t.procedure.query(async () => {
+    return prisma.pokemon.findMany();
   }),
 });
 

@@ -370,6 +370,7 @@ export default function AddMultiplePokemon() {
   return (
     <div>
       <h1>Add Multiple Pokémon</h1>
+      I think there are enough Pokémon in the list already. What do you think?
       {/* <form onSubmit={handleSubmit}>
           <button type="submit">Add Pokémon</button>
         </form> */}
